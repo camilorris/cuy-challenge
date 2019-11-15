@@ -1,5 +1,7 @@
 ### Cuy Challenge Solution
 
+Note: This Application must be run in localhost:1356
+
 ## Available Scripts
 
 In the project directory, you can run:
