@@ -1,0 +1,11 @@
+:root {
+  --font-bungee-regular: "Bungee-Regular", Tahoma, sans-serif;
+}
+
+@font-face {
+  font-family: "Bungee-Regular";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("~assets/fonts/bungee-regular.woff2") format("woff2");
+}

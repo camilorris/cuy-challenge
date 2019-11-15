@@ -1,0 +1,154 @@
+.loadingPage {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: var(--font-bungee-regular);
+    font-size: 36px;
+    color: var(--color-purple-1);
+    text-align: center;
+  }
+}
+
+.appBackground {
+  background-color: #f5f5f5;
+  width: 375px;
+  height: 656px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .appContainer {
+    background-color: white;
+    width: 340px;
+    height: 618px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-family: var(--font-bungee-regular);
+      font-size: 36px;
+      color: var(--color-purple-1);
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .iconList {
+      display: flex;
+      margin: 25px auto 0 auto;
+
+      p {
+        font-family: var(--font-bungee-regular);
+        font-size: 14px;
+        color: var(--color-purple-1);
+        margin-top: 0;
+      }
+
+      ul {
+        padding: 0;
+        margin: -3px;
+        display: flex;
+      }
+
+      li {
+        display: flex;
+        list-style: none;
+        align-items: flex-start;
+        margin: 0 auto auto 2px;
+
+        &:first-of-type {
+          margin-left: 10px;
+        }
+
+        span {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 8px;
+          color: var(--color-purple-1);
+        }
+      }
+    }
+
+    .priceContainer {
+      width: 121px;
+      height: 37px;
+      background-color: white;
+      border-radius: 30px;
+      box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+      margin: 0 auto 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      span {
+        font-family: var(--font-bungee-regular);
+        font-size: 15px;
+        color: white;
+        background-color: var(--color-purple-1);
+        border-radius: 50px;
+        height: 33px;
+        width: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      p {
+        font-family: var(--font-bungee-regular);
+        font-size: 25px;
+        color: var(--color-orange-1);
+        margin: 0;
+      }
+    }
+
+    .days {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: var(--color-purple-1);
+      margin: 0;
+      align-self: center;
+    }
+
+    .divider {
+      height: 1px;
+      width: 280px;
+      border: 0;
+      background-color: var(--color-purple-1);
+      opacity: 0.3;
+      margin: 13px auto 0;
+    }
+
+    p {
+      font-family: var(--font-bungee-regular);
+      font-size: 20px;
+      color: var(--color-purple-1);
+      margin: 9px auto;
+    }
+
+    button {
+      font-family: var(--font-bungee-regular);
+      font-size: 20px;
+      color: white;
+      background-color: var(--color-orange-1);
+      border: 1px solid white;
+      border-radius: 20px;
+      padding: 3px 12px;
+      width: calc(100% - 167px);
+      margin: 20px auto;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .info {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: var(--color-purple-1);
+      margin: 0;
+      align-self: center;
+      text-decoration: underline;
+    }
+  }
+}
