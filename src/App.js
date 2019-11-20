@@ -10,6 +10,7 @@ import WhatsappIcon from "assets/icons/whatsapp-icon.svg";
 import FacebookIcon from "assets/icons/facebook-icon.svg";
 
 import styles from "./styles.module.scss";
+import { fallbackData } from "./constants";
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,6 +20,25 @@ const App = () => {
   const [currentBytesPlan, setCurrentBytesPlan] = useState(0);
   const [currentSecondsPlan, setCurrentSecondsPlan] = useState(0);
   const [smsPlan, setSmsPlan] = useState(0);
+  const setPlansData = planes => {
+    const segundos = [];
+    const bytes = [];
+    planes.forEach(plan => {
+      if (plan.bundleType.id === 1) {
+        segundos.push(plan);
+      }
+      if (plan.bundleType.id === 2) {
+        bytes.push(plan);
+      }
+      if (plan.bundleType.id === 3) {
+        setSmsPlan(plan);
+      }
+    });
+    setSegundos(segundos);
+    setBytes(bytes.reverse());
+    setCurrentBytesPlan(bytes[0]);
+    setCurrentSecondsPlan(segundos[0]);
+  };
 
   useEffect(() => {
     axios
@@ -30,23 +50,10 @@ const App = () => {
       })
       .then(response => {
         const planes = response.data.list;
-        const segundos = [];
-        const bytes = [];
-        planes.forEach(plan => {
-          if (plan.bundleType.id === 1) {
-            segundos.push(plan);
-          }
-          if (plan.bundleType.id === 2) {
-            bytes.push(plan);
-          }
-          if (plan.bundleType.id === 3) {
-            setSmsPlan(plan);
-          }
-        });
-        setSegundos(segundos);
-        setBytes(bytes.reverse());
-        setCurrentBytesPlan(bytes[0]);
-        setCurrentSecondsPlan(segundos[0]);
+        setPlansData(planes);
+      })
+      .catch(() => {
+        setPlansData(fallbackData);
       });
   }, []);
 
